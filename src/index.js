@@ -5,9 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-// import chat from './reducers'
+import chat from './reducers'
 
-const store = createStore()
+const store = createStore(chat)
 
 ReactDOM.render(
   <Provider store={store}>
