@@ -6,9 +6,9 @@ describe('adding a message', () => {
     const message = 'Something'
     const action = {
       type: types.ADD_MESSAGE,
+      id: 0,
       message: message,
-      author: 'Me',
-      id: 0
+      author: "Me"
     }
     expect(addMessage(message)).toEqual(action)
   })
@@ -19,9 +19,9 @@ describe('adding a second message', () => {
     const message = 'Something'
     const action = {
       type: types.ADD_MESSAGE,
+      id: 1,
       message: message,
-      author: 'Me',
-      id: 1
+      author: "Me"
     }
     expect(addMessage(message)).toEqual(action)
   })
