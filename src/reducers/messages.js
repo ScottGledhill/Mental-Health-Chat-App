@@ -1,4 +1,5 @@
 const messages = (state = [], action) => {
+  console.log('reducer message:', action)
   switch (action.type) {
     case 'ADD_MESSAGE':
     case 'MESSAGE_RECEIVED':

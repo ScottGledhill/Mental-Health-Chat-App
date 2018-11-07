@@ -42,3 +42,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+~ provider is a react-redux component that wraps app and provides store to all children
+~ an action happens addMessage/addUser/messageReceived/populateUsersList
+~ reducer takes two arguments, state and action, returns the next state after action
+~ appropriate container mapDispatchToProps and sends props to appropriate component
+~ component deals with presentational logic and app.js displays component
+~ combineReducers, combines both user and message reducers to provide one single state 'tree'
+

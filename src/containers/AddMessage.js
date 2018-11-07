@@ -7,7 +7,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addMessage(message, author)) 
   }
 })
-//dispatch to trigger state change 
+//dispatch to trigger state change, must return object whose keys will be passed
+//on as props of AddMessage component
 //add message component for presentation
 
 export const AddMessage = connect(() => ({}), mapDispatchToProps)(AddMessageComponent)

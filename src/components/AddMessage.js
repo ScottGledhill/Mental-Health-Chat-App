@@ -3,21 +3,21 @@ import PropTypes from 'prop-types'
 
 const AddMessage = (props) => {
   let input
-  console.log(props.dispatch)
+  console.log(props)
   return (
     <section id="new-message">
       <input
         onKeyPress={(event) => {
-        if (event.key === 'Enter') {
-          props.dispatch(input.value, 'Me') //dispatch to trigger state change
-          input.value = ''
-        }
-      }}
+          if (event.key === 'Enter') {
+            props.dispatch(input.value, 'Me') 
+            input.value = ''
+          }
+        }}
         type="text"
         ref={(node) => {
-        input = node
-      }}
-      />
+          input = node
+        }}
+        />
     </section>
   )
 }
