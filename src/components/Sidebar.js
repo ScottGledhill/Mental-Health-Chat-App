@@ -10,6 +10,7 @@ const Sidebar = ({ users }) => (
     </ul>
   </aside>
 )
+// take users from sidebar container, map to display in list
 
 Sidebar.propTypes = {
   users: PropTypes.arrayOf(
@@ -19,5 +20,6 @@ Sidebar.propTypes = {
     }).isRequired
   ).isRequired
 }
+//check sidebar contains id and name(strings)
 
 export default Sidebar

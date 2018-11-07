@@ -10,10 +10,13 @@ import { AddMessage } from './containers/AddMessage'
   <div id="container">
     <Sidebar />
     <section id="main">
-      <MessagesList />
+      <MessagesList /> 
       <AddMessage />
     </section>
   </div>
   )
+
+  // sidebar-show users, messageslist-show sent messages
+  // addmessage-add new message from input
 
 export default App;
