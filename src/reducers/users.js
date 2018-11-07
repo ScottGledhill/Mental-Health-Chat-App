@@ -10,5 +10,7 @@ const users = (state = [], action) => {
       return state
   }
 }
+// when we add a user, we put it in the users list
+// when we get an updated users list from the server, we return new list 
 
 export default users

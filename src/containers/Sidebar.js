@@ -7,3 +7,5 @@ export const Sidebar = connect(state => ({
 
 //connect() to map the stores users from the state
 //export provides const Sidebar to Sidebar component
+
+//container manages behaviour and data for presentational component to show

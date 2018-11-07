@@ -13,6 +13,7 @@ const MessagesList = ({ messages }) => (
     </ul>
   </section>
 )
+// map through to show messages
 
 MessagesList.propTypes = {
   messages: PropTypes.arrayOf(
@@ -23,5 +24,5 @@ MessagesList.propTypes = {
     }).isRequired
   ).isRequired
 }
-
+//check for author,id,message
 export default MessagesList

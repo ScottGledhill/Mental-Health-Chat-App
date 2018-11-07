@@ -7,4 +7,7 @@ const chat = combineReducers({
   users
 });
 
+// 'calls reducers' to gets messages and users
+// use chat in src/index.js to createstore
+
 export default chat
