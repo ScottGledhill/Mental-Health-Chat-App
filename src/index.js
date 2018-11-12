@@ -12,15 +12,16 @@ import handleNewMessage from './sagas'
 import setupSocket from './sockets'
 import username from './utils/name'
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware() // init saga
 
 const store = createStore(
   reducers,
   applyMiddleware(sagaMiddleware)
 )
+const socket = setupSocket(store.dispatch, username)
 
-//add ourselves as present in chat
-store.dispatch(addUser('Me'))
+//handle new message with saga
+sagaMiddleware.run(handleNewMessage, { socket, username })
 
 ReactDOM.render(
   <Provider store={store}>
