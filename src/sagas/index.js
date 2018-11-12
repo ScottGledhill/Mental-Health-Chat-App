@@ -19,8 +19,9 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 
-//add ourselves as present in chat
-store.dispatch(addUser('Me'))
+const socket = setupSocket(store.dispatch, username)
+
+sagaMiddleware.run(handleNewMessage, { socket, username })
 
 ReactDOM.render(
   <Provider store={store}>
@@ -28,5 +29,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-// Provider makes store accessable to its children(must wrap all)
-serviceWorker.unregister();
+registerServiceWorker()
