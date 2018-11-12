@@ -17,4 +17,21 @@ export const addUser = name => ({
   name
 })
 
+
 //give user unique id so react relax
+
+export const messageReceived = (message, author) => ({
+  type: types.MESSAGE_RECEIVED,
+  id: nextMessageId++,
+  message,
+  author
+})
+
+//add message id and author when message received
+
+export const populateUsersList = users => ({
+  type: types.USERS_LIST,
+  users
+})
+
+// create user list 

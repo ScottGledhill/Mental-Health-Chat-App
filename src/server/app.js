@@ -16,15 +16,15 @@ wss.on('connection', (ws) => {
   let index
   ws.on('message', (message) => {
     const data = JSON.parse(message)
-    switch (data.type) {
-      case 'ADD_USER': {
+    switch (data.type) { // listen for add_user/add_message on connection
+      case 'ADD_USER': { // if add_user send add_user event with user name 
         index = users.length
-        users.push({ name: data.name, id: index + 1 })
+        users.push({ name: data.name, id: index + 1 }) // add to server-side list of users 
         ws.send(JSON.stringify({
           type: 'USERS_LIST',
           users
-        }))
-        broadcast({
+        })) 
+        broadcast({ //send new list of users to everyone connected 
           type: 'USERS_LIST',
           users
         }, ws)
@@ -42,7 +42,7 @@ wss.on('connection', (ws) => {
     }
   })
 
-  ws.on('close', () => {
+  ws.on('close', () => { // when leave room/signout remove from user list
     users.splice(index, 1)
     broadcast({
       type: 'USERS_LIST',
