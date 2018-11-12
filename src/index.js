@@ -6,7 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import './index.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
+import * as serviceWorker from './serviceWorker';
 import reducers from './reducers'
 import handleNewMessage from './sagas'
 import setupSocket from './sockets'

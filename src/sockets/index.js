@@ -10,6 +10,7 @@ const setupSocket = (dispatch, username) => {
     }))
   }
   socket.onmessage = (event) => {
+    console.log('inside socket', event)
     const data = JSON.parse(event.data) //check event for type of action
     switch (data.type) {
       case types.ADD_MESSAGE:
