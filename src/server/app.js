@@ -13,6 +13,7 @@ const broadcast = (data, ws) => {
 }
 
 wss.on('connection', (ws) => {
+  console.log('connect', ws)
   let index
   ws.on('message', (message) => {
     const data = JSON.parse(message)

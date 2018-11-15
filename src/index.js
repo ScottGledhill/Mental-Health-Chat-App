@@ -6,6 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import './index.css'
 import App from './App'
+import './server'
 import * as serviceWorker from './serviceWorker';
 import reducers from './reducers'
 import handleNewMessage from './sagas'
@@ -16,7 +17,8 @@ const sagaMiddleware = createSagaMiddleware() // init saga
 
 const store = createStore(
   reducers,
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(sagaMiddleware),
+  window.devToolsExtension && window.devToolsExtension()
 )
 const socket = setupSocket(store.dispatch, username)
 
